@@ -1,0 +1,54 @@
+.game-board {
+    position:relative;
+    width: 1625px;
+    height: 1130px;
+    padding:20px;
+    border: 3px solid #999;
+    margin-left:50px;
+    margin-top:50px;
+}
+.player-battlefield {
+    position:absolute;
+    padding:10px;
+    width:1110px;
+    height:210px;
+    border: 1px solid black;
+    text-align:center;
+}
+.top-player-shift {
+    top:20px;
+    left:270px;
+}
+.bottom-player-shift {
+    top:920px;
+    left:270px;
+}
+.left-player-shift {
+    top:470px;
+    left:-430px;
+}
+.right-player-shift {
+    top:470px;
+    right:-435px;
+}
+.rotate-right {
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+.rotate-left {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+}
+.rotate-upside-down {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.card {
+    display:inline-block;
+    width: 150px;
+    height: 210px;
+    border:1px solid black;
+}

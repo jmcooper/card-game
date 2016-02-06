@@ -6,16 +6,42 @@
   <script src="/node_modules/angular/angular.min.js"></script>
   <script src="/app/app.js"></script>
   <script src="/app/game-controller.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/app.css">
 </head>
 <body ng-app="app" ng-controller="GameController">
-  <div><button ng-click="shuffle()">Shuffle!</button></div>
-  <div style="float:left; width:30%; padding:25px">
-    <h3>Unshuffled Deck</h3>
-    {{unshuffledDeck}}
-  </div>
-  <div style="float:left; width:30%; padding:25px">
-    <h3>Shuffled Deck</h3>
-    {{players}}
+  <div class="game-board">
+    <div class="player-battlefield top-player-shift rotate-upside-down">
+      <div class="card">
+        Hello World
+      </div>
+      <div class="card">
+        Hello World
+      </div>
+      <div class="card">
+        Hello World
+      </div>
+      <div class="card">
+        Hello World
+      </div>
+      <div class="card">
+        Hello World
+      </div>
+      <div class="card">
+        Hello World
+      </div>
+      <div class="card">
+        Hello World
+      </div>
+    </div>
+    <div class="player-battlefield bottom-player-shift">
+      Hello World
+    </div>
+    <div class="player-battlefield left-player-shift rotate-right">
+      Hello World
+    </div>
+    <div class="player-battlefield right-player-shift rotate-left">
+      Hello World
+    </div>
   </div>
 </body>
 </html>
