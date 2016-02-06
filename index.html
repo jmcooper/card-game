@@ -8,7 +8,14 @@
   <script src="/app/game-controller.js"></script>
 </head>
 <body ng-app="app" ng-controller="GameController">
-  Number of players: {{game.players}}
-
+  <div><button ng-click="shuffle()">Shuffle!</button></div>
+  <div style="float:left; width:30%; padding:25px">
+    <h3>Unshuffled Deck</h3>
+    {{unshuffledDeck}}
+  </div>
+  <div style="float:left; width:30%; padding:25px">
+    <h3>Shuffled Deck</h3>
+    {{players}}
+  </div>
 </body>
 </html>
