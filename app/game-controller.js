@@ -19,13 +19,8 @@ app.controller('GameController', function($scope) {
     {name: 'Nancy', deck: []}
   ]
 
-
-
-
   $scope.shuffle = function() {
     $scope.shuffledDeck = $scope.unshuffledDeck
-    console.log(getRandomIntInclusive(0,$scope.unshuffledDeck.length-1))
-
 
     for (var i = $scope.unshuffledDeck.length; i >= 0; i--)
     {
@@ -33,21 +28,12 @@ app.controller('GameController', function($scope) {
       var cardRemoved = cardsRemoved[0]
 
       $scope.shuffledDeck.push(cardRemoved)
-
     }
 
-    for (var x = 0; x <= numPlayers; x++)
+    for (var x = 0; x < numPlayers; x++)
     {
-      $scope.players[x].deck[0] = $scope.shuffledDeck.splice(0, deckSize)
-
-
+      $scope.players[x].deck = $scope.shuffledDeck.splice(0, deckSize)
     }
-
-
-    //loop over the unshuffled array
-    //get a random # between 0 and # of items in array -1
-    //remove the item at that ^ index array.splice
-    //add the removed item to $scope.shuffledDeck
   }
 
   function getRandomIntInclusive(min, max) {
