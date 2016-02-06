@@ -1,5 +1,7 @@
+'use strict';
+
 app.controller('GameController', function($scope) {
-  $scope.unshuffledDeck = [
+  var unshuffledDeck = [
     {name: 'Frost Giant', health: 10},
     {name: 'Kirby', health: 63},
     {name: 'Pacman', health: 5},
@@ -9,9 +11,9 @@ app.controller('GameController', function($scope) {
     {name: 'Sally Mander', health: 5},
     {name: 'Jupiter', health: 20}
   ]
-
   var numPlayers = 4
   var deckSize = 2
+
   $scope.players = [
     {name: 'Billy', deck: []},
     {name: 'Jason', deck: []},
@@ -19,12 +21,18 @@ app.controller('GameController', function($scope) {
     {name: 'Nancy', deck: []}
   ]
 
-  $scope.shuffle = function() {
-    $scope.shuffledDeck = $scope.unshuffledDeck
+  $scope.killPlayer1Card1 = function() {
+    $scope.players[0].deck.splice(0,1)
+  }
 
-    for (var i = $scope.unshuffledDeck.length; i >= 0; i--)
+  shuffleAndDeal()
+
+  function shuffleAndDeal() {
+    $scope.shuffledDeck = unshuffledDeck
+
+    for (var i = unshuffledDeck.length; i >= 0; i--)
     {
-      var cardsRemoved = $scope.unshuffledDeck.splice(getRandomIntInclusive(0,i) - 1,1)
+      var cardsRemoved = unshuffledDeck.splice(getRandomIntInclusive(0,i) - 1,1)
       var cardRemoved = cardsRemoved[0]
 
       $scope.shuffledDeck.push(cardRemoved)
