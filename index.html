@@ -12,27 +12,27 @@
   <div class="game-board" ng-controller="GameController">
     <button ng-click="killPlayer1Card1()" style="position:absolute; z-index:1000;">Kill player 1's first card</button>
     <div class="player-battlefield top-player-shift rotate-upside-down">
-      <div class="card" ng-repeat="foo in players[2].deck">
-        <div>{{foo.name}}</div>
-        <div>Health: {{foo.health}}</div>
+      <div class="card" ng-repeat="card in players[2].deck" ng-click="cardSelected(card)" ng-class="{'red-border': card.attacking}" ng-style="getCardStyle(card)">
+        <div>{{card.name}}</div>
+        <div>Health: {{card.health}}</div>
       </div>
     </div>
     <div class="player-battlefield bottom-player-shift">
-      <div class="card" ng-repeat="foo in players[0].deck">
-        <div>{{foo.name}}</div>
-        <div>Health: {{foo.health}}</div>
+      <div class="card" ng-repeat="card in players[0].deck" ng-click="cardSelected(card)" ng-class="{'red-border': card.attacking}"  ng-style="getCardStyle(card)">
+        <div>{{card.name}}</div>
+        <div>Health: {{card.health}}</div>
       </div>
     </div>
     <div class="player-battlefield left-player-shift rotate-right">
-      <div class="card" ng-repeat="foo in players[1].deck">
-        <div>{{foo.name}}</div>
-        <div>Health: {{foo.health}}</div>
+      <div class="card" ng-repeat="card in players[1].deck" ng-click="cardSelected(card)" ng-class="{'red-border': card.attacking}"  ng-style="getCardStyle(card)">
+        <div>{{card.name}}</div>
+        <div>Health: {{card.health}}</div>
       </div>
     </div>
     <div class="player-battlefield right-player-shift rotate-left">
-      <div class="card" ng-repeat="foo in players[3].deck">
-        <div>{{foo.name}}</div>
-        <div>Health: {{foo.health}}</div>
+      <div class="card" ng-repeat="card in players[3].deck" ng-click="cardSelected(card)" ng-class="{'red-border': card.attacking}"  ng-style="getCardStyle(card)">
+        <div>{{card.name}}</div>
+        <div>Health: {{card.health}}</div>
       </div>
     </div>
   </div>
