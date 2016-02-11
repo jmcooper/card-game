@@ -72,6 +72,14 @@ app.controller('GameController', function($scope) {
     return {'background-image': 'url(/img/' + card.image + ')', 'background-size': '100% 100%'}
   }
 
+  $scope.cardEnter = function(card) {
+    card.hoverImage = '/img/' + card.image
+  }
+
+  $scope.cardLeave = function(card) {
+    card.hoverImage = null
+  }
+
   function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
