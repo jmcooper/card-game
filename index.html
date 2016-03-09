@@ -11,6 +11,7 @@
 <body ng-app="app">
   <div class="game-board" ng-controller="GameController">
     <button ng-click="killPlayer1Card1()" style="position:absolute; z-index:1000;">Kill player 1's first card</button>
+    <!--<div class="player-battlefield top-player-shift rotate-upside-down" ng-class="getBattlefieldClass(index)" ng-repeat="player,index in players">-->
     <div class="player-battlefield top-player-shift rotate-upside-down">
       <div class="card" ng-repeat="card in players[2].deck" ng-click="cardSelected(card)" ng-mouseenter="cardEnter(card)" ng-mouseleave="cardLeave(card)" ng-class="{'red-border': card.attacking}" ng-style="getCardStyle(card)">
         <div class="card-zoom rotate-upside-down"  ng-show="card.hoverImage">
